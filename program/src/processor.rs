@@ -84,7 +84,7 @@ pub mod config_feature {
         solana_program::declare_id!("4NpMfWThvJQsV9VLjUXXpn3tPv1zoQpib8wCBDc1EBzD");
     }
     pub mod create_pool_fee_address {
-        solana_program::declare_id!("3XMrhbv989VxAMi3DErLV9eJht1pHppW5LbKxe9fkEFR");
+        solana_program::declare_id!("BaxwYWafs4xeTYQqAk8jRTN7Fi1KtDUXKmMkkfQyWRwC");
     }
 }
 #[cfg(not(any(feature = "localnet", feature = "devnet")))]

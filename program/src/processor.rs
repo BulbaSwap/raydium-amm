@@ -75,7 +75,7 @@ pub mod config_feature {
 #[cfg(feature = "devnet")]
 pub mod config_feature {
     pub mod amm_owner {
-        solana_program::declare_id!("Adm29NctkKwJGaaiU8CXqdV6WDTwR81JbxV8zoxn745Y");
+        solana_program::declare_id!("CcwNaTGp6eUfK69DaHihfjC63wgSygeuUpD23Y68MkeD");
     }
     pub mod openbook_program {
         solana_program::declare_id!("EoTcMgcDRTJVZDMZWBoU6rhYHZfkNTVEAfz3uUJRcYGj");

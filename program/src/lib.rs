@@ -15,4 +15,5 @@ pub mod state;
 // Export current solana-sdk types for downstream users who may also be building with a different solana-sdk version
 pub use solana_program;
 
-// solana_program::declare_id!("");
+#[cfg(feature = "devnet")]
+solana_program::declare_id!("baskUiPSS8Tv3fvCdYKmBfwgwK3Vbkr8KDCCET3KjSv");

@@ -17,6 +17,7 @@ client = ["serum_dex/client"]
 test = []
 devnet = []
 localnet = []
+mainnet = []
 
 [dependencies]
 solana-program = "<1.17.0"

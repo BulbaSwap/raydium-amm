@@ -10,7 +10,7 @@ use serum_dex::{
     matching::Side,
     state::{EventView, MarketState, OpenOrders, ToAlignedBytes},
 };
-use solana_program::{account_info::AccountInfo, log::sol_log_compute_units, msg};
+use solana_program::{account_info::AccountInfo, log::sol_log_compute_units};
 use std::{cmp::Eq, convert::identity, convert::TryInto};
 use uint::construct_uint;
 
@@ -250,13 +250,11 @@ impl Calculator {
         let event_q = market_state.load_event_queue_mut(event_q_account).unwrap();
         let mut native_pc_total = open_orders.native_pc_total;
         let mut native_coin_total = open_orders.native_coin_total;
-        msg!("calc_exact len:{}", event_q.len());
         sol_log_compute_units();
         for event in event_q.iter() {
             if identity(event.owner) != (*amm_open_account.key).to_aligned_bytes() {
                 continue;
             }
-            // msg!("{:?}", event.as_view().unwrap());
             match event.as_view().unwrap() {
                 EventView::Fill {
                     side,

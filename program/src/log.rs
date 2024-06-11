@@ -21,7 +21,7 @@ macro_rules! check_assert_eq {
 pub fn log_keys_mismatch(msg: &str, input: Pubkey, expected: Pubkey) {
     msg!(arrform!(
         LOG_SIZE,
-        "log: {} input:{}, expected:{}",
+        "ray_log: {} input:{}, expected:{}",
         msg,
         input,
         expected
@@ -152,7 +152,7 @@ pub fn encode_ray_log<T: Serialize>(log: T) {
     let bytes_written = base64::encode_config_slice(bytes, base64::STANDARD, &mut out_buf);
     out_buf.resize(bytes_written, 0);
     let msg_str = unsafe { std::str::from_utf8_unchecked(&out_buf) };
-    msg!(arrform!(LOG_SIZE, "log: {}", msg_str).as_str());
+    msg!(arrform!(LOG_SIZE, "ray_log: {}", msg_str).as_str());
 }
 
 pub fn decode_ray_log(log: &str) {
